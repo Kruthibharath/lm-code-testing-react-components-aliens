@@ -12,6 +12,7 @@ export const AddNumbers: React.FC<AddNumbersProps> = ({
     <select
       value={result}
       onChange={(e) => onChangeOfSelection(e.target.value)}
+      title="What is 2 plus 2?"
     >
       <option value="4">4</option>
       <option value="Not 4">Not 4</option>

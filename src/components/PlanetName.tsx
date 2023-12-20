@@ -14,6 +14,8 @@ export const PlanetName: React.FC<PlanetNameProps> = ({
         type="text"
         value={planetName}
         onChange={(e) => onChangePlanetName(e.target.value)}
+        title="Enter the Planet Name"
+        placeholder="Earth, Mars, Jupiter"
       />
     </div>
   </>

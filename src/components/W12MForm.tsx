@@ -23,13 +23,7 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
   const [numberOfBeings, setNumberOfBeings] = useState(0);
   const [addNumbers, setAddNumbers] = useState("Please select your answer");
   const [reason, setReason] = useState("");
-  /*const [formData, setFormData] = useState<AppFormData>({
-    speciesName: "",
-    planetName: "",
-    numberOfBeings: 0,
-    addNumbers: "",
-    reason: "",
-  });*/
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData: AppFormData = {

@@ -12,6 +12,7 @@ export const ReasonForSparing: React.FC<reasonForSparingProps> = ({
       <textarea
         value={reason}
         onChange={(e) => onChangeOfReason(e.target.value)}
+        title="Enter the reason for sparing"
       />
     </div>
   </>
