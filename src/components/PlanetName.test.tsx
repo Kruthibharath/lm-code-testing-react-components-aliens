@@ -15,4 +15,17 @@ describe("Planet Component", () => {
     const inputValueForPlanet = screen.getByDisplayValue("Mars");
     expect(inputValueForPlanet).toBeInTheDocument();
   });
+
+  test("component displaying label text correctly", () => {
+    //const handleSubmitMock = jest.fn();
+    render(<PlanetName planetName="Earth" onChangePlanetName={() => {}} />);
+    const inputField = screen.getByLabelText("Planet Name:");
+    expect(inputField).toBeInTheDocument();
+  });
+
+  test("title attribute is displayed correctly", () => {
+    render(<PlanetName planetName="Earth" onChangePlanetName={() => {}} />);
+    const title = screen.getByTitle("Enter the Planet Name");
+    expect(title).toBeInTheDocument();
+  });
 });
