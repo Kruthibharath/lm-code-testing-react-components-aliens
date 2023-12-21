@@ -8,7 +8,7 @@ export const NumberOfBeings: React.FC<NumberOfBeingsProps> = ({
 }) => (
   <>
     <div>
-      <label htmlFor="numberOfBeings" aria-labelledby="numberOfBeings">
+      <label id="numberOfBeings" htmlFor="numberOfBeings">
         Number of Beings:
       </label>
       <input
@@ -17,6 +17,7 @@ export const NumberOfBeings: React.FC<NumberOfBeingsProps> = ({
         onChange={(e) => onChangeNumberOfBeings(parseInt(e.target.value))}
         title="Enter the number of beings"
         placeholder="2, 30, 45"
+        aria-labelledby="numberOfBeings"
       />
     </div>
   </>

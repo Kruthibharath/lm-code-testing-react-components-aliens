@@ -27,7 +27,7 @@ describe("Number of beings", () => {
         onChangeNumberOfBeings={onChangeMock}
       />
     );
-    const inputField = screen.getByPlaceholderText("2, 30, 45");
+    const inputField = screen.getByLabelText("Number of Beings:");
     fireEvent.change(inputField, { target: { value: 5 } });
     expect(onChangeMock).toHaveBeenCalled();
     expect(onChangeMock).toHaveBeenCalledTimes(1);
