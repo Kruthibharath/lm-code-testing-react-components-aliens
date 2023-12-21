@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { SpeciesName } from "./SpeciesName";
 
 describe("Species Component", () => {
@@ -15,5 +15,22 @@ describe("Species Component", () => {
     );
     const inputValue = screen.getByDisplayValue("Alliens");
     expect(inputValue).toBeInTheDocument();
+  });
+
+  test("displays input field with the provided value", () => {
+    render(<SpeciesName speciesName="Humans" onChangeSpeciesName={() => {}} />);
+    const inputFieldValue = screen.getByDisplayValue("Humans");
+    expect(inputFieldValue).toBeInTheDocument();
+  });
+
+  test("calls onChangeSpeciesName with the correct parameters", () => {
+    const onChangeMock = jest.fn();
+    render(
+      <SpeciesName speciesName="Humans" onChangeSpeciesName={onChangeMock} />
+    );
+    const inputField = screen.getByPlaceholderText("Humans, Alliens, Animals");
+    fireEvent.change(inputField, { target: { value: "Animals" } });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalledWith("Animals");
   });
 });

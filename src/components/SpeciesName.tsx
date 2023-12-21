@@ -11,11 +11,12 @@ export const SpeciesName: React.FC<SpeciesNameProps> = ({
     <div>
       <label htmlFor="speciesName">Species Name:</label>
       <input
+        id="speciesName"
         type="text"
         value={speciesName}
         onChange={(e) => onChangeSpeciesName(e.target.value)}
-        title="Enter the Species Name:"
-        placeholder="Humans, Alliens, Animals "
+        title="Enter the Species Name"
+        placeholder="Humans, Alliens, Animals"
       />
     </div>
   </>
