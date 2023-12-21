@@ -8,7 +8,9 @@ export const NumberOfBeings: React.FC<NumberOfBeingsProps> = ({
 }) => (
   <>
     <div>
-      <label htmlFor="numberOfBeings">Number of Beings:</label>
+      <label htmlFor="numberOfBeings" aria-labelledby="numberOfBeings">
+        Number of Beings:
+      </label>
       <input
         type="number"
         value={numberOfBeings}

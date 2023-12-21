@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import { PlanetName } from "./PlanetName";
-import { resolveModuleNameFromCache } from "typescript";
 
 describe("Planet Component", () => {
   test("component renders without fail", () => {
@@ -17,7 +16,6 @@ describe("Planet Component", () => {
   });
 
   test("component displaying label text correctly", () => {
-    //const handleSubmitMock = jest.fn();
     render(<PlanetName planetName="Earth" onChangePlanetName={() => {}} />);
     const inputField = screen.getByLabelText("Planet Name:");
     expect(inputField).toBeInTheDocument();
