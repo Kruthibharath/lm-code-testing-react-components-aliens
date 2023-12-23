@@ -21,7 +21,7 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
   const [speciesName, setSpeciesName] = useState("Humans");
   const [planetName, setPlanetName] = useState("Earth");
   const [numberOfBeings, setNumberOfBeings] = useState(0);
-  const [addNumbers, setAddNumbers] = useState("Please select your answer");
+  const [addNumbers, setAddNumbers] = useState("Select your answer");
   const [reason, setReason] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,8 +53,9 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
           onChangeNumberOfBeings={(value) => setNumberOfBeings(value)}
         />
         <AddNumbers
-          result={addNumbers}
+          addNumbers={addNumbers}
           onChangeOfSelection={(value) => setAddNumbers(value)}
+          //defaultValue="Select your answer"
         />
         <ReasonForSparing
           reason={reason}

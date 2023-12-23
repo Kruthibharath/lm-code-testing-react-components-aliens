@@ -1,13 +1,13 @@
 interface AddNumbersProps {
-  result: string;
+  addNumbers: string;
   onChangeOfSelection: (value: string) => void;
-  defaultValue: string;
+  //defaultValue: string; can't have both controlled and uncontrolled value at the same time
 }
 
 export const AddNumbers: React.FC<AddNumbersProps> = ({
-  result,
+  addNumbers,
   onChangeOfSelection,
-  defaultValue,
+  //defaultValue,
 }) => (
   <div>
     <label id="addNumbers" htmlFor="addNumbers">
@@ -15,8 +15,8 @@ export const AddNumbers: React.FC<AddNumbersProps> = ({
     </label>
     <select
       name="addNumbers"
-      value={result}
-      defaultValue={defaultValue}
+      value={addNumbers}
+      //defaultValue={defaultValue}
       onChange={(e) => onChangeOfSelection(e.target.value)}
       title="What is 2 plus 2?"
       aria-labelledby="addNumbers"
