@@ -5,7 +5,11 @@ describe("Species Component", () => {
   test("component renders without fail", () => {
     render(<SpeciesName speciesName="Humans" onChangeSpeciesName={() => {}} />);
   });
-
+  test("displays input field with the provided value", () => {
+    render(<SpeciesName speciesName="Humans" onChangeSpeciesName={() => {}} />);
+    const inputFieldValue = screen.getByDisplayValue("Humans");
+    expect(inputFieldValue).toBeInTheDocument();
+  });
   test("renders with different props", () => {
     const { rerender } = render(
       <SpeciesName speciesName="Humans" onChangeSpeciesName={() => {}} />
@@ -16,13 +20,6 @@ describe("Species Component", () => {
     const inputValue = screen.getByDisplayValue("Alliens");
     expect(inputValue).toBeInTheDocument();
   });
-
-  test("displays input field with the provided value", () => {
-    render(<SpeciesName speciesName="Humans" onChangeSpeciesName={() => {}} />);
-    const inputFieldValue = screen.getByDisplayValue("Humans");
-    expect(inputFieldValue).toBeInTheDocument();
-  });
-
   test("calls onChangeSpeciesName with the correct parameters", () => {
     const onChangeMock = jest.fn();
     render(

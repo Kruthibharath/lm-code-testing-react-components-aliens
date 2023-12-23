@@ -28,8 +28,20 @@ describe("Adding Numbers", () => {
     expect(onChangeMock).toHaveBeenCalledWith("Not 4");
   });
 
+  test("options to have correct values", () => {
+    render(
+      <AddNumbers
+        addNumbers="Select your answer"
+        onChangeOfSelection={() => {}}
+      />
+    );
+    const options = screen.getAllByRole("option");
+    const optionsValues = options.map((option) => option.textContent);
+    expect(optionsValues).toEqual(["4", "Not 4"]);
+  });
+
   /* test("renders with different default value passed", () => {
-    render(<AddNumbers addNumbers="Not 4" onChangeOfSelection={() => {}} />);
+    render(<AddNumbers addNumbers="Not 4" onChangeOfSelection={() => {}} defaultValue="Please choose your option"/>);
     const defaultValue = screen.getByRole("option");
     expect(defaultValue).toHaveValue("Not 4");
   });
