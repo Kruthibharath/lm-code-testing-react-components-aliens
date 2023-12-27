@@ -5,6 +5,7 @@ import { PlanetName } from "./PlanetName";
 import { NumberOfBeings } from "./NumberOfBeings";
 import { AddNumbers } from "./AddNumbers";
 import { ReasonForSparing } from "./ReasonForSparing";
+import { validateSpeciesName } from "../validate/validate_species_name";
 
 interface AppFormData {
   speciesName: string;
@@ -43,6 +44,7 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
         <SpeciesName
           speciesName={speciesName}
           onChangeSpeciesName={(value) => setSpeciesName(value)}
+          validate={(speciesName) => validateSpeciesName(speciesName)}
         />
         <PlanetName
           planetName={planetName}
