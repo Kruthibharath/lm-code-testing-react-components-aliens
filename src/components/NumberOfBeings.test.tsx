@@ -4,7 +4,11 @@ import { NumberOfBeings } from "./NumberOfBeings";
 describe("Number of beings", () => {
   test("input field has correct type attribute", () => {
     render(
-      <NumberOfBeings numberOfBeings={0} onChangeNumberOfBeings={() => {}} />
+      <NumberOfBeings
+        numberOfBeings={0}
+        onChangeNumberOfBeings={() => {}}
+        validate={() => []}
+      />
     );
     const inputField = screen.getByPlaceholderText("2, 30, 45");
     expect(inputField).toHaveAttribute("type", "number");
@@ -12,7 +16,11 @@ describe("Number of beings", () => {
 
   test("component renders with the initial values without any fail", () => {
     render(
-      <NumberOfBeings numberOfBeings={0} onChangeNumberOfBeings={() => {}} />
+      <NumberOfBeings
+        numberOfBeings={0}
+        onChangeNumberOfBeings={() => {}}
+        validate={() => []}
+      />
     );
     const inputField = screen.getByTitle("Enter the number of beings");
     expect(inputField).toBeInTheDocument();
@@ -25,6 +33,7 @@ describe("Number of beings", () => {
       <NumberOfBeings
         numberOfBeings={0}
         onChangeNumberOfBeings={onChangeMock}
+        validate={() => []}
       />
     );
     const inputField = screen.getByLabelText("Number of Beings:");
