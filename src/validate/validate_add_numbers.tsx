@@ -1,5 +1,3 @@
-import { AddNumbers } from "../components/AddNumbers";
-
 export const validateAddNumbers: (addNumbers: string) => string[] = (
   addNumbers
 ) => {

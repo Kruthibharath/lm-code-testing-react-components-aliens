@@ -9,6 +9,7 @@ import { validateSpeciesName } from "../validate/validate_species_name";
 import { validatePlanetName } from "../validate/validate_planet_name";
 import { validateNumberOfBeings } from "../validate/validate_number_of_beings";
 import { validateAddNumbers } from "../validate/validate_add_numbers";
+import { validateReasonForSparing } from "../validate/validate_reason_for_sparing";
 
 interface AppFormData {
   speciesName: string;
@@ -68,6 +69,7 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
         <ReasonForSparing
           reason={reason}
           onChangeOfReason={(value) => setReason(value)}
+          validate={(reason) => validateReasonForSparing(reason)}
         />
         <button type="submit">Submit</button>
       </form>
