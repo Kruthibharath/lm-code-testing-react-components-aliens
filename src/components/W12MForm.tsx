@@ -8,6 +8,7 @@ import { ReasonForSparing } from "./ReasonForSparing";
 import { validateSpeciesName } from "../validate/validate_species_name";
 import { validatePlanetName } from "../validate/validate_planet_name";
 import { validateNumberOfBeings } from "../validate/validate_number_of_beings";
+import { validateAddNumbers } from "../validate/validate_add_numbers";
 
 interface AppFormData {
   speciesName: string;
@@ -61,6 +62,7 @@ const W12MForm: React.FC<WebFormProps> = ({ updateAppFormData }) => {
         <AddNumbers
           addNumbers={addNumbers}
           onChangeOfSelection={(value) => setAddNumbers(value)}
+          validate={(addNumbers) => validateAddNumbers(addNumbers)}
           //defaultValue="Select your answer"
         />
         <ReasonForSparing

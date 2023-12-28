@@ -3,7 +3,13 @@ import { AddNumbers } from "./AddNumbers";
 
 describe("Adding Numbers", () => {
   test("renders with default value selected", () => {
-    render(<AddNumbers addNumbers="" onChangeOfSelection={() => {}} />);
+    render(
+      <AddNumbers
+        addNumbers=""
+        onChangeOfSelection={() => {}}
+        validate={() => []}
+      />
+    );
     const selected = screen.getByRole("combobox");
     expect(selected).toHaveValue("4");
   });
@@ -12,6 +18,7 @@ describe("Adding Numbers", () => {
       <AddNumbers
         addNumbers="Select your answer"
         onChangeOfSelection={() => {}}
+        validate={() => []}
       />
     );
     const select = screen.getByLabelText("What is 2+2?");
@@ -21,7 +28,11 @@ describe("Adding Numbers", () => {
   test("calls onChangeOfSelection when an option is selected", () => {
     const onChangeMock = jest.fn();
     render(
-      <AddNumbers addNumbers="Not 4" onChangeOfSelection={onChangeMock} />
+      <AddNumbers
+        addNumbers="Not 4"
+        onChangeOfSelection={onChangeMock}
+        validate={() => []}
+      />
     );
     const select = screen.getByLabelText("What is 2+2?");
     fireEvent.change(select, { target: { value: "Not 4" } });
@@ -33,6 +44,7 @@ describe("Adding Numbers", () => {
       <AddNumbers
         addNumbers="Select your answer"
         onChangeOfSelection={() => {}}
+        validate={() => []}
       />
     );
     const options = screen.getAllByRole("option");
