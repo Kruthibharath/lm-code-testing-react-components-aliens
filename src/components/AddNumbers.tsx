@@ -22,7 +22,7 @@ export const AddNumbers: React.FC<AddNumbersProps> = ({
         </label>
         <select
           name="addNumbers"
-          value={addNumbers}
+          value={addNumbers === "Select your answer" ? "" : addNumbers}
           //defaultValue={defaultValue}
           onChange={(e) => onChangeOfSelection(e.target.value)}
           title="What is 2 plus 2?"
