@@ -20,7 +20,7 @@ describe("ValidateSpeciesName", () => {
       "No numbers or special characters allowed in Species Name.",
     ]);
   });
-  test("Validating for alphabets only input", () => {
+  test("Validating for an alphabets only input", () => {
     expect(validateSpeciesName("Alliens")).toEqual([]);
   });
 });
